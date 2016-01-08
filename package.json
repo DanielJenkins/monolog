@@ -1,0 +1,19 @@
+{
+  "name": "photopass",
+  "version": "1.0.0",
+  "description": "package.json file for photopass",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJenkins/photopass.git"
+  },
+  "author": "Daniel Jenkins <DanielPatrickJenkins@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielJenkins/photopass/issues"
+  },
+  "homepage": "https://github.com/DanielJenkins/photopass#readme"
+}
