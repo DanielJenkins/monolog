@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/DanielJenkins/photopass/issues"
   },
-  "homepage": "https://github.com/DanielJenkins/photopass#readme"
+  "homepage": "https://github.com/DanielJenkins/photopass#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "jade": "^1.11.0",
+    "mongoose": "^4.3.5",
+    "passport": "^0.3.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.1.1"
+  }
 }
