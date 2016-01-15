@@ -1,24 +1,56 @@
 body {
-  background-color: white; }
+  background-color: #7c674e;
+  background-image: url("../public/images/wood.jpg"); }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: sans-serif; }
+  font-family: "Noto Sans", Helvetica, sans-serif; }
 
-p, div, a {
-  font-family: serif; }
+p {
+  font-family: "Lora", Georgia, serif;
+  font-size: 18px;
+  background-color: #41643F;
+  color: #090909; }
+
+a {
+  background-color: #1D81B7;
+  color: #0B0B0B; }
 
 .header {
-  background-color: blue;
-  color: headerFont; }
+  background-color: #1D81B7;
+  color: #0B0B0B; }
 
 .colors {
   width: 90%;
   height: 0;
   padding-bottom: 90%;
-  border: 1px solid #FFFFFF;
+  border: 1px solid #ffffff;
   margin: 10px auto; }
 
 #background {
-  background-color: white; }
+  background-color: #7c674e; }
+
+#orange {
+  background-color: #7c674e; }
+
+#orangeGrey {
+  background-color: #A1A1A1; }
+
+#orangeBlack {
+  background-color: #0B0B0B; }
+
+#green {
+  background-color: #41643F; }
+
+#greenBright {
+  background-color: #23DA19; }
+
+#greenBlack {
+  background-color: #090909; }
+
+#blue {
+  background-color: #1D81B7; }
+
+#blueDark {
+  background-color: #33454F; }
 
 /*# sourceMappingURL=default.css.map */
