@@ -1,8 +1,8 @@
 {
   "name": "photopass",
   "version": "1.0.0",
-  "description": "package.json file for photopass",
-  "main": "app.js",
+  "description": "A site for people to share photos with each other",
+  "main": "application/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,14 +16,14 @@
     "url": "https://github.com/DanielJenkins/photopass/issues"
   },
   "homepage": "https://github.com/DanielJenkins/photopass#readme",
+  "devDependencies": {
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.1.1"
+  },
   "dependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "jade": "^1.11.0",
-    "mongoose": "^4.3.5",
+    "mongoose": "^4.3.6",
     "passport": "^0.3.2"
-  },
-  "devDependencies": {
-    "gulp-sass": "^2.1.1"
   }
 }
