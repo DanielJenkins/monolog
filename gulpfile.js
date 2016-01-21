@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var jade = require('gulp-jade');
 
-var app = 'application/app.js';
-
 gulp.task('default', ['jade','sass','watch']);
 
 gulp.task('jade', function() {
@@ -25,6 +23,7 @@ gulp.task('watch', function () {
   gulp.watch('./public/sass/**/*.scss', ['sass']);
 });
 
+var app = 'application/app.js';
 gulp.task('nodemon', function() {
   nodemon({
     script: app,
