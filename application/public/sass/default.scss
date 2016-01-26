@@ -15,9 +15,13 @@ $paragraphColor: $greenBlack;
 $headerFont: 'Noto Sans', Helvetica, sans-serif;
 $paragraphFont: 'Lora', Georgia, serif;
 
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   background-color: $background;
-  background-image: url("../public/images/wood.jpg");
+  background-image: url("../images/wood.png");
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: $headerFont;
@@ -25,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: $paragraphFont;
   font-size: 18px;
-  background-color: $paragraphBackground;
   color: $paragraphColor;
 }
 a {
@@ -43,31 +46,41 @@ a {
   border: 1px solid #ffffff;
   margin: 10px auto;
 }
-
-#background {
-  background-color: $background;
-}
-#orange {
+.orange {
   background-color: $orange;
 }
-#orangeGrey {
+.orangeGrey {
   background-color: $orangeGrey;
 }
-#orangeBlack {
+.orangeBlack {
   background-color: $orangeBlack;
 }
-#green {
+.green {
   background-color: $green;
 }
-#greenBright {
+.greenBright {
   background-color: $greenBright;
 }
-#greenBlack {
+.greenBlack {
   background-color: $greenBlack;
 }
-#blue {
+.blue {
   background-color: $blue;
 }
-#blueDark {
+.blueDark {
   background-color: $blueDark;
+}
+//----------------------------------------------
+.break {
+  min-height: 50px;
+  background-image: url("../images/wood.png");
+}
+.content {
+  background-color: $background;
+}
+.footer {
+  background-color: $paragraphBackground;
+}
+.header {
+  background-color: $paragraphBackground;
 }
