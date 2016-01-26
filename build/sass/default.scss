@@ -1,0 +1,89 @@
+$orange: #7c674e;
+$orangeGrey: #A1A1A1;
+$orangeBlack: #0B0B0B;
+$green: #41643F;
+$greenBright: #23DA19;
+$greenBlack: #090909;
+$blue: #1D81B7;
+$blueDark: #33454F;
+$background: $orange;
+$headerBackground: $blue;
+$headerColor: $orangeBlack;
+$paragraphBackground: $green;
+$paragraphColor: $greenBlack;
+
+$headerFont: 'Noto Sans', Helvetica, sans-serif;
+$paragraphFont: 'Lora', Georgia, serif;
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: $background;
+  background-image: url("../images/wood.png");
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headerFont;
+}
+p {
+  font-family: $paragraphFont;
+  font-size: 18px;
+  color: $paragraphColor;
+}
+a {
+  background-color: $headerBackground;
+  color: $headerColor;
+}
+.header {
+  background-color: $headerBackground;
+  color: $headerColor;
+}
+.colors {
+  width: 90%;
+  height: 0;
+  padding-bottom: 90%;
+  border: 1px solid #ffffff;
+  margin: 10px auto;
+}
+.orange {
+  background-color: $orange;
+}
+.orangeGrey {
+  background-color: $orangeGrey;
+}
+.orangeBlack {
+  background-color: $orangeBlack;
+}
+.green {
+  background-color: $green;
+}
+.greenBright {
+  background-color: $greenBright;
+}
+.greenBlack {
+  background-color: $greenBlack;
+}
+.blue {
+  background-color: $blue;
+}
+.blueDark {
+  background-color: $blueDark;
+}
+//----------------------------------------------
+.break {
+  min-height: 50px;
+  background-image: url("../images/wood.png");
+}
+.content {
+  background-color: $background;
+}
+//testsss
+.footer {
+  background-color: $paragraphBackground;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.header {
+  background-color: $paragraphBackground;
+}
