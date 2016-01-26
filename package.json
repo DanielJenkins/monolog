@@ -1,21 +1,21 @@
 {
-  "name": "photopass",
+  "name": "monolog",
   "version": "1.0.0",
-  "description": "A site for people to share photos with each other",
+  "description": "A site for people to share text posts",
   "main": "application/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielJenkins/photopass.git"
+    "url": "git+https://github.com/DanielJenkins/monolog.git"
   },
   "author": "Daniel Jenkins <DanielPatrickJenkins@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DanielJenkins/photopass/issues"
+    "url": "https://github.com/DanielJenkins/monolog/issues"
   },
-  "homepage": "https://github.com/DanielJenkins/photopass#readme",
+  "homepage": "https://github.com/DanielJenkins/monolog#readme",
   "devDependencies": {
     "gulp-jade": "^1.1.0",
     "gulp-sass": "^2.1.1"

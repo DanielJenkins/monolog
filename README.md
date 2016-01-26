@@ -1,2 +1,2 @@
-# photopass
-A site for people to share photos with each other
+# MonoLog
+A site for people to share text posts
