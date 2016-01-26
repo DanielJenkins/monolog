@@ -1,6 +1,6 @@
 body {
   background-color: #7c674e;
-  background-image: url("../public/images/wood.jpg"); }
+  background-image: url("../application/public/images/wood.png"); }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Noto Sans", Helvetica, sans-serif; }

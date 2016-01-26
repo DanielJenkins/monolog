@@ -67,3 +67,17 @@ a {
 
 .header {
   background-color: #41643F; }
+
+label {
+  color: #090909;
+  text-shadow: 0px 0px 2px #23DA19; }
+
+img {
+  border-radius: 35px; }
+
+.mini-spacer {
+  margin-top: 20px; }
+
+.form-control:focus {
+  -webkit-box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19;
+  box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19; }
