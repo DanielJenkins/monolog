@@ -1,7 +1,7 @@
 <!Doctype html>
 html
   head
-    title MonoLog - New User
+    title MonoLog - Log In
     script(src="http://code.jquery.com/jquery-1.12.0.min.js")
     script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
@@ -9,15 +9,15 @@ html
     link(rel="stylesheet" type="text/css" href="../css/default.css")
   body
     div(class="container-fluid")
-      //----------------Everything above this line should be deleted once join.html is pulled into the page via angular---------------------
+      //----------------Everything above this line should be deleted once login.html is pulled into the page via angular---------------------
       div(class="row mini-spacer")
       div(class="row")
         div(class="col-xs-12 col-sm-offset-1 col-sm-10 hidden-md hidden-lg")
-          img(src="../images/longLog2.jpg" alt="A Log in a Forest" style="width:100%;")
+          img(src="../images/longLog6.jpg" alt="A Log in a Forest" style="width:100%;")
       div(class="row mini-spacer")
       div(class="row")
         div(class="hidden-xs hidden-sm col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3")
-          img(src="../images/squareLog2.jpg" alt="A Log in a Forest" style="width:100%;")
+          img(src="../images/squareLog6.jpg" alt="A Log in a Forest" style="width:100%;")
         div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 col-lg-4")
           div(id="join")
             form(class="form-horizontal")
@@ -25,27 +25,22 @@ html
                 div(class="hidden-xs hidden-sm col-md-12 col-lg-12")
                   div(class="mini-spacer")
               div(class="row")
+                div(class="hidden-xs hidden-sm col-md-12 col-lg-12")
+                  div(class="mini-spacer")
+              div(class="row")
                 div(class="hidden-xs hidden-sm hidden-md col-lg-12")
                   div(class="mini-spacer")
               div(class="form-group")
-                label(for="newEmail" class="col-xs-3 col-sm-2 col-md-3 control-label") Email
+                label(for="user" class="col-xs-3 col-sm-2 col-md-3 control-label") User
                 div(class="col-xs-9 col-sm-10 col-md-9")
-                  input(type="email" class="form-control" id="newEmail" placeholder="eg: EnterYourEmail@gmail.com")
+                  input(type="text" class="form-control" id="user" placeholder="Username or Email Address")
               div(class="form-group")
-                label(for="newUsername" class="col-xs-3 col-sm-2 col-md-3 control-label") Username
+                label(for="password" class="col-xs-3 col-sm-2 col-md-3 control-label") Password
                 div(class="col-xs-9 col-sm-10 col-md-9")
-                  input(type="text" class="form-control" id="newUsername" placeholder="eg: Username123")
-              div(class="form-group")
-                label(for="newPassword" class="col-xs-3 col-sm-2 col-md-3 control-label") Password
-                div(class="col-xs-9 col-sm-10 col-md-9")
-                  input(type="password" class="form-control" id="newPassword" placeholder="Enter a Password")
-              div(class="form-group")
-                label(for="confirmPassword" class="col-xs-3 col-sm-2 col-md-3 control-label")
-                div(class="col-xs-9 col-sm-10 col-md-9")
-                  input(type="password" class="form-control" id="confirmPassword" placeholder="Confirm Your Password")
+                  input(type="password" class="form-control" id="password" placeholder="Enter a Password")
               div(class="form-group")
                 div(class="col-xs-offset-3 col-xs-9 col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9")
                   button(type="submit" class="btn btn-default") Create Account
         div(class="hidden-xs hidden-sm col-md-3 col-lg-3")
-          img(src="../images/squareLog3.jpg" alt="A Log in a Forest" style="width:100%;")
+          img(src="../images/squareLog1.jpg" alt="A Log in a Forest" style="width:100%;")
 
