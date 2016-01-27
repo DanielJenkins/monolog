@@ -13,24 +13,42 @@ var LocalStrategy = passportLocal.Strategy;//
 
 app.use(express.static('application/public'));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname+'/public/html/index.html'));
-});
-
-//Database
+//Login----------------------------------------
 mongoose.connect('mongodb://localhost/monolog', function(err) {
   if (err) throw err;
   console.log('connected!');
 });
 var Schema = mongoose.Schema;
 var userSchema = new Schema({
-  email: {type: String, required: true, unique: true}
+  email: {type: String, required: true, unique: true},
   username: {type: String, required: true, unique: true},
   password: {type: String, required: true}
 });
 
 mongoose.model('User',userSchema);
 var User = mongoose.model('User');
+
+
+
+
+//TEST USER----------------------------------------
+////REMOVE THIS BLOCK ONCE THE ABILITY TO CREATE USERS IS COMPLETE
+User.remove({username: 'john'}, function(err) { //Clear all existing docs
+  if (err) throw err;
+});
+var johnny = new User({ //create doc
+  email: 'john@gmail.com',
+  username: 'john',
+  password: 'secret'
+})
+johnny.save(function(err) { //save doc
+  if (err) throw err;
+  console.log('Johnny Saved');
+});
+//END BLOCK TO REMOVE----------------------------------------
+
+
+
 
 var strategy = new LocalStrategy(function(username, password, done) {
   User.findOne({ username: username }, function(err, user) {
@@ -66,6 +84,11 @@ app.use(initializer);
 app.use(passport.session());
 app.use(express.static('/public'));
 
+//Routes----------------------------------------
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/html/login.html'));
+});
+
 app.post('/newuser', urlParser, passport.authenticate('local', {
   successRedirect: '/success',
   failureRedirect: '/failure'
@@ -78,7 +101,7 @@ app.post('/login', urlParser, passport.authenticate('local', {
 
 app.get('/failure', function(req, res){
   console.log('login failed');
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+  res.sendFile(path.join(__dirname + '/public/html/login.html'));
 });
 
 app.use('/success', function(req, res, next){
@@ -92,7 +115,7 @@ app.use('/success', function(req, res, next){
 
 app.get('/success', function(req, res){
   console.log('login successful');
-  res.sendFile(path.join(__dirname + '/public/home.html'));
+  res.sendFile(path.join(__dirname + '/public/html/index.html'));
 });
 
 app.listen(1337, function() {
