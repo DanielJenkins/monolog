@@ -86,7 +86,11 @@ app.use(express.static('/public'));
 
 //Routes----------------------------------------
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/html/login.html'));
+  res.sendFile(path.join(__dirname + '/public/html/index.html'));
+});
+
+app.use('/join', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/html/join.html'));
 });
 
 app.post('/newuser', urlParser, passport.authenticate('local', {
@@ -101,7 +105,7 @@ app.post('/login', urlParser, passport.authenticate('local', {
 
 app.get('/failure', function(req, res){
   console.log('login failed');
-  res.sendFile(path.join(__dirname + '/public/html/login.html'));
+  res.sendFile(path.join(__dirname + '/public/html/index.html'));
 });
 
 app.use('/success', function(req, res, next){
@@ -115,7 +119,7 @@ app.use('/success', function(req, res, next){
 
 app.get('/success', function(req, res){
   console.log('login successful');
-  res.sendFile(path.join(__dirname + '/public/html/index.html'));
+  res.sendFile(path.join(__dirname + '/public/html/home.html'));
 });
 
 app.listen(1337, function() {
