@@ -4,13 +4,14 @@ $orangeBlack: #0B0B0B;
 $green: #41643F;
 $greenBright: #23DA19;
 $greenBlack: #090909;
+$greenDark: #194617;
 $blue: #1D81B7;
 $blueDark: #33454F;
+
+$headerBackground: $green;
+$headerColor: $greenBlack;
 $background: $orange;
-$headerBackground: $blue;
-$headerColor: $orangeBlack;
-$paragraphBackground: $green;
-$paragraphColor: $greenBlack;
+$paragraphColor: $orangeBlack;
 
 $headerFont: 'Noto Sans', Helvetica, sans-serif;
 $paragraphFont: 'Lora', Georgia, serif;
@@ -35,42 +36,70 @@ a {
   background-color: $headerBackground;
   color: $headerColor;
 }
-.header {
+
+// .orange {
+//   background-color: $orange;
+// }
+// .orangeGrey {
+//   background-color: $orangeGrey;
+// }
+// .orangeBlack {
+//   background-color: $orangeBlack;
+// }
+// .green {
+//   background-color: $green;
+// }
+// .greenBright {
+//   background-color: $greenBright;
+// }
+// .greenBlack {
+//   background-color: $greenBlack;
+// }
+// .blue {
+//   background-color: $blue;
+// }
+// .blueDark {
+//   background-color: $blueDark;
+// }
+//Nav Bar----------------------------------------------
+.brandImg {
+  height: 100%;
+  border-radius: 10px;
+}
+.collapseButton {
+  background-color: $background;
+  border-color: $orangeGrey;
+}
+.collapseButton:hover, .collapseButton:focus {
+  background-color: $background;
+  border-color: $greenBright;
+}
+.navbar-nav > li > a {
+  color: $orangeGrey;
   background-color: $headerBackground;
+}
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background-color: $greenDark;
+}
+.header {
+  font-family: $headerFont;
   color: $headerColor;
+  background-color: $headerBackground;
+  border-color: $background;
 }
-.colors {
-  width: 90%;
-  height: 0;
-  padding-bottom: 90%;
-  border: 1px solid #ffffff;
-  margin: 10px auto;
+.headerSpacer {
+  margin-top: 50px;
 }
-.orange {
-  background-color: $orange;
+.navbar-brand {
+  padding: 5px;
 }
-.orangeGrey {
-  background-color: $orangeGrey;
+ul.header:hover {
+  background-color: black;
 }
-.orangeBlack {
-  background-color: $orangeBlack;
+.icon-bar {
+  background-color: $headerBackground;
 }
-.green {
-  background-color: $green;
-}
-.greenBright {
-  background-color: $greenBright;
-}
-.greenBlack {
-  background-color: $greenBlack;
-}
-.blue {
-  background-color: $blue;
-}
-.blueDark {
-  background-color: $blueDark;
-}
-//index----------------------------------------------
+//Every Page----------------------------------------------
 .break {
   min-height: 50px;
   background-image: url("../images/wood.png");
@@ -78,27 +107,22 @@ a {
 .content {
   background-color: $background;
 }
-//testsss
-.footer {
-  background-color: $paragraphBackground;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.header {
-  background-color: $paragraphBackground;
-}
-//join----------------------------------------------
-label {
-  color: $greenBlack;
-  text-shadow: 0px 0px 2px $greenBright;
-}
-img {
+.fillerImg {
   border-radius: 35px;
 }
-.mini-spacer {
-  margin-top: 20px;
+.footer {
+  background-color: $headerBackground;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .form-control:focus {
   -webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
   box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+}
+label {
+  color: $greenBlack;
+  text-shadow: 0px 0px 2px $greenBright;
+}
+.mini-spacer {
+  margin-top: 20px;
 }

@@ -12,46 +12,48 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-family: "Lora", Georgia, serif;
   font-size: 18px;
-  color: #090909; }
+  color: #0B0B0B; }
 
 a {
-  background-color: #1D81B7;
-  color: #0B0B0B; }
+  background-color: #41643F;
+  color: #090909; }
 
-.header {
-  background-color: #1D81B7;
-  color: #0B0B0B; }
+.brandImg {
+  height: 100%;
+  border-radius: 10px; }
 
-.colors {
-  width: 90%;
-  height: 0;
-  padding-bottom: 90%;
-  border: 1px solid #ffffff;
-  margin: 10px auto; }
+.collapseButton {
+  background-color: #7c674e;
+  border-color: #A1A1A1; }
 
-.orange {
-  background-color: #7c674e; }
+.collapseButton:hover, .collapseButton:focus {
+  background-color: #7c674e;
+  border-color: #23DA19; }
 
-.orangeGrey {
-  background-color: #A1A1A1; }
-
-.orangeBlack {
-  background-color: #0B0B0B; }
-
-.green {
+.navbar-nav > li > a {
+  color: #A1A1A1;
   background-color: #41643F; }
 
-.greenBright {
-  background-color: #23DA19; }
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+  background-color: #194617; }
 
-.greenBlack {
-  background-color: #090909; }
+.header {
+  font-family: "Noto Sans", Helvetica, sans-serif;
+  color: #090909;
+  background-color: #41643F;
+  border-color: #7c674e; }
 
-.blue {
-  background-color: #1D81B7; }
+.headerSpacer {
+  margin-top: 50px; }
 
-.blueDark {
-  background-color: #33454F; }
+.navbar-brand {
+  padding: 5px; }
+
+ul.header:hover {
+  background-color: black; }
+
+.icon-bar {
+  background-color: #41643F; }
 
 .break {
   min-height: 50px;
@@ -60,24 +62,21 @@ a {
 .content {
   background-color: #7c674e; }
 
+.fillerImg {
+  border-radius: 35px; }
+
 .footer {
   background-color: #41643F;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px; }
 
-.header {
-  background-color: #41643F; }
+.form-control:focus {
+  -webkit-box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19;
+  box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19; }
 
 label {
   color: #090909;
   text-shadow: 0px 0px 2px #23DA19; }
 
-img {
-  border-radius: 35px; }
-
 .mini-spacer {
   margin-top: 20px; }
-
-.form-control:focus {
-  -webkit-box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19;
-  box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19; }
