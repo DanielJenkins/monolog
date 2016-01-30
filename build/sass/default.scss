@@ -16,25 +16,23 @@ $paragraphColor: $orangeBlack;
 $headerFont: 'Noto Sans', Helvetica, sans-serif;
 $paragraphFont: 'Lora', Georgia, serif;
 
-html {
-  height: 100%;
+a {
+  background-color: $headerBackground;
 }
 body {
-  height: 100%;
   background-color: $background;
   background-image: url("../images/wood.png");
 }
 h1, h2, h3, h4, h5, h6, a {
   font-family: $headerFont;
 }
+label {
+  color: $greenBlack;
+  text-shadow: 0px 0px 2px $greenBright;
+}
 p {
   font-family: $paragraphFont;
   font-size: 18px;
-  color: $paragraphColor;
-}
-a {
-  background-color: $headerBackground;
-  color: $headerColor;
 }
 
 // .orange {
@@ -123,9 +121,13 @@ ul.myNavbar:hover {
   -webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
   box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
-label {
-  color: $greenBlack;
-  text-shadow: 0px 0px 2px $greenBright;
+.header {
+  color: $orange;
+  text-shadow: 1px 1px 2px $greenBlack;
+  background-color: $greenDark;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 0px 0px 15px $greenBlack;
 }
 .mini-spacer {
   padding-top: 20px;
@@ -133,6 +135,7 @@ label {
 //Welcome----------------------------------------------
 #welcomeImg {
   border-radius: 35px;
+  box-shadow: 0px 0px 15px $orangeBlack;
 }
 #welcomeLoginBtn {
   width: 100%;
@@ -159,15 +162,15 @@ label {
   background-color: $greenDark;
   box-shadow: 0 4px 6px $greenBlack;
 }
-.welcomeTextBody {
-  max-width: 650px;
-  margin-left: auto;
-  margin-right: auto;
-  color: $blueDark;
-  text-shadow: 1px 1px 2px $blue;
+#welcomeTextBox {
+  color: $greenDark;
+  text-weight: bold;
+  background-color: $orange;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px $orangeBlack;
 }
 .welcomeTextHeader {
   font-size: 50px;
-  color: $blue;
-  text-shadow: 2px 2px 0px $greenBlack;
+  margin: 0 auto;
+  max-width: 460px;
 }
