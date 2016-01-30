@@ -89,15 +89,6 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/html/index.html'));
 });
 
-app.use('/join', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/html/join.html'));
-});
-
-app.post('/newuser', urlParser, passport.authenticate('local', {
-  successRedirect: '/success',
-  failureRedirect: '/failure'
-}));
-
 app.post('/login', urlParser, passport.authenticate('local', {
   successRedirect: '/success',
   failureRedirect: '/failure'

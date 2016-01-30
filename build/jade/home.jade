@@ -2,18 +2,29 @@
 html
   head
     title MonoLog
-    script(src="http://code.jquery.com/jquery-1.12.0.min.js")
-    script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="//code.jquery.com/jquery-1.12.0.min.js")
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
     link(rel="stylesheet" type="text/css" href="css/default.css")
 body
-  div(class="container-fluid full-height")
-    div(class="row header")
-      div(class="col-xs-12")
-        h1 header home
-    div(class="row")
-      div(class="col-xs-12 hidden-sm hidden-md hidden-lg break")
+  nav(class="navbar navbar-fixed-top myNavbar")
+    div(class="container-fluid")
+      div(class="navbar-header")
+        button(type="button" class="navbar-toggle collapseButton" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false")
+          span(class="sr-only") Toggle navigation
+          span(class="icon-bar")
+          span(class="icon-bar")
+        a(class="navbar-brand" href="#/")
+          img(alt="Brand" src="../images/pixelLog.png" class="brandImg")
+      div(class="collapse navbar-collapse" id="navbar-collapse-1")
+        ul(class="nav navbar-nav navbar-right")
+          li(class="active")
+            a(href="https://github.com/DanielJenkins/monolog" target="_blank") About
+          li(class="active")
+            a(href="#/welcome") Logout
+  div(class="container-fluid")
+    div(class="row headerSpacer")
     div(class="row")
       div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 content")
         h3 header
