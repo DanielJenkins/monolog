@@ -1,34 +1,40 @@
 var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');//
-var passport = require('passport');//
-var passportLocal = require('passport-local');//
-var session = require('express-session');//
-var mongoose = require('mongoose');//
-
 var app = express();
-var urlParser = bodyParser.urlencoded({ extended: false });//
-var LocalStrategy = passportLocal.Strategy;//
+var port = process.env.PORT || 1337;
+var mongoose = require('mongoose');
+var passport = require('passport');
+////var flash = require('connect-flash');
+////var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
-//app.use(bodyParser.json());
-app.use(express.static('application/public'));
-
-//Login----------------------------------------
 mongoose.connect('mongodb://localhost/monolog', function(err) {
   if (err) throw err;
   console.log('connected!');
 });
-var Schema = mongoose.Schema;
-var userSchema = new Schema({
-  email: {type: String, required: true, unique: true},
-  username: {type: String, required: true, unique: true},
-  password: {type: String, required: true}
-});
 
-mongoose.model('User',userSchema);
-var User = mongoose.model('User');
+require('./public/js/passport.js')(passport);
 
-//TEST USER----------------------------------------
+/////app.use(cookieParser());
+app.use(bodyParser());
+
+app.use(session({ secret: 'icecreamhasnobones', resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+////app.use(flash());
+
+require('./public/js/routes.js')(app,passport);
+
+////app.use(flash());
+
+
+//----------------------------------------
+
+
+//mongoose.model('User',userSchema);
+//var User = mongoose.model('User');
+
+/*TEST USER----------------------------------------
 ////REMOVE THIS BLOCK ONCE THE ABILITY TO CREATE USERS IS COMPLETE
 User.remove({}, function(err) { //Clear all existing docs
   if (err) throw err;
@@ -42,85 +48,11 @@ johnny.save(function(err) { //save doc
   if (err) throw err;
   console.log('Johnny Saved');
 });
-//END BLOCK TO REMOVE----------------------------------------
+END BLOCK TO REMOVE----------------------------------------*/
 
-var strategy = new LocalStrategy(function(username, password, done) {
-  User.findOne({ username: username }, function(err, user) {
-      if (err) {
-        return done(err);
-      }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (user.password != password) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-});
-passport.use(strategy);
 
-passport.serializeUser(function(user, done) {
-  console.log(user);
-  done(null, user.id);
-});
 
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    console.log(user);
-    done(err, user);
-  });
-});
 
-app.use(session({ secret: 'something secret', resave: false, saveUninitialized: true }));
-var initializer = passport.initialize();
-app.use(initializer);
-app.use(passport.session());
-app.use(express.static('/public'));
-
-//Routes----------------------------------------
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/html/index.html'));
-});
-
-app.post('/newuser', urlParser, function(req, res) {
-  var newUser = new User({
-    email: req.body.joinEmail,
-    username: req.body.joinUsername,
-    password: req.body.joinPw
-  });
-  newUser.save(function(err, savedUser) {
-    if (err) throw err;
-    else {
-      res.redirect('/login');
-    }
-  });
-});
-
-app.post('/login', urlParser, passport.authenticate('local', {
-  successRedirect: '/success',
-  failureRedirect: '/failure'
-}));
-
-app.get('/failure', function(req, res){
-  console.log('login failed');
-  res.sendFile(path.join(__dirname + '/public/html/index.html'));
-});
-
-app.use('/success', function(req, res, next){
-  if (req.user) {
-    next();
-  }
-  else {
-    res.redirect('/');
-  }
-});
-
-app.get('/success', function(req, res){
-  console.log('login successful');
-  res.sendFile(path.join(__dirname + '/public/html/home.html'));
-});
-
-app.listen(1337, function() {
+app.listen(port, function() {
   console.log('App is running!');
 });
