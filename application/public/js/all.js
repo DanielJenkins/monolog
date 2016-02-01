@@ -31,6 +31,7 @@ app.controller('welcomeController', function() {
  );
 app.controller('joinController', function() {
      vm = this;
+     vm.message = data.message;
    }
  );
 app.controller('loginpageController', function() {

@@ -1,12 +1,8 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var path = require('path');
 
 module.exports = function(app, passport) {
-  app.use(bodyParser());
   app.use(express.static('application/public'));
-
-  var urlParser = bodyParser.urlencoded({ extended: false });
 
   app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/../html/index.html'));
@@ -14,19 +10,15 @@ module.exports = function(app, passport) {
 
   app.post('/newuser', passport.authenticate('local-signup', {
     successRedirect: '/success',
-    failureRedirect: '/joinpage'
-    ////, failureFlash: true
+    failureRedirect: '/#/joinpage',
+    failureFlash: true
   }));
 
-  app.post('/login', urlParser, passport.authenticate('local-login', {
+  app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/success',
-    failureRedirect: '/failure'
+    failureRedirect: '/#/loginpage',
+    failureFlash: true
   }));
-
-  app.get('/failure', function(req, res){
-    console.log('login failed');
-    res.sendFile(path.join(__dirname + '/public/html/index.html'));
-  });
 
   app.use('/success', function(req, res, next){
     if (req.user) {
@@ -39,6 +31,7 @@ module.exports = function(app, passport) {
 
   app.get('/success', function(req, res){
     console.log('login successful');
+    console.log(req.user);
     res.sendFile(path.join(__dirname + '/../html/home.html'));
   });
 
