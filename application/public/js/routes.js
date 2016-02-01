@@ -13,12 +13,12 @@ module.exports = function(app, passport) {
   });
 
   app.post('/newuser', passport.authenticate('local-signup', {
-    successRedirect: '/home',
+    successRedirect: '/success',
     failureRedirect: '/joinpage'
     ////, failureFlash: true
   }));
 
-  app.post('/login', urlParser, passport.authenticate('local', {
+  app.post('/login', urlParser, passport.authenticate('local-login', {
     successRedirect: '/success',
     failureRedirect: '/failure'
   }));
@@ -39,7 +39,7 @@ module.exports = function(app, passport) {
 
   app.get('/success', function(req, res){
     console.log('login successful');
-    res.sendFile(path.join(__dirname + '/public/html/home.html'));
+    res.sendFile(path.join(__dirname + '/../html/home.html'));
   });
 
 };
