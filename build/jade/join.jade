@@ -25,7 +25,7 @@ div(class="container-fluid")
       img(src="../images/squareLog2.jpg" alt="A Log in a Forest" class="fillerImg")
     div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 col-lg-4")
       div(id="join")
-        form(class="form-horizontal" action="/newuser" method="post")
+        form(class="form-horizontal" action="/newuser" method="POST")
           div(class="row")
             div(class="hidden-xs hidden-sm col-md-12 col-lg-12")
               div(class="mini-spacer")
@@ -33,21 +33,21 @@ div(class="container-fluid")
             div(class="hidden-xs hidden-sm hidden-md col-lg-12")
               div(class="mini-spacer")
           div(class="form-group")
-            label(for="newEmail" class="col-xs-3 col-sm-2 col-md-3 control-label") Email
+            label(for="joinEmail" class="col-xs-3 col-sm-2 col-md-3 control-label") Email
             div(class="col-xs-9 col-sm-10 col-md-9")
-              input(type="email" class="form-control" id="newEmail" placeholder="eg: EnterYourEmail@gmail.com")
+              input(type="email" name="joinEmail" class="form-control" placeholder="eg: EnterYourEmail@gmail.com")
           div(class="form-group")
-            label(for="newUsername" class="col-xs-3 col-sm-2 col-md-3 control-label") Username
+            label(for="joinUsername" class="col-xs-3 col-sm-2 col-md-3 control-label") Username
             div(class="col-xs-9 col-sm-10 col-md-9")
-              input(type="text" class="form-control" id="newUsername" placeholder="eg: Username123")
+              input(type="text" name="joinUsername" class="form-control" placeholder="eg: Username123")
           div(class="form-group")
-            label(for="newPassword" class="col-xs-3 col-sm-2 col-md-3 control-label") Password
+            label(for="joinPw" class="col-xs-3 col-sm-2 col-md-3 control-label") Password
             div(class="col-xs-9 col-sm-10 col-md-9")
-              input(type="password" class="form-control" id="newPassword" placeholder="Enter a Password")
+              input(type="password" name="joinPw" class="form-control" placeholder="Enter a Password")
           div(class="form-group")
-            label(for="confirmPassword" class="col-xs-3 col-sm-2 col-md-3 control-label")
+            label(for="joinConfirmPassword" class="col-xs-3 col-sm-2 col-md-3 control-label")
             div(class="col-xs-9 col-sm-10 col-md-9")
-              input(type="password" class="form-control" id="confirmPassword" placeholder="Confirm Your Password")
+              input(type="password" name="joinConfirmPassword" class="form-control" placeholder="Confirm Your Password")
           div(class="form-group")
             div(class="col-xs-offset-3 col-xs-9 col-sm-offset-2 col-sm-10 col-md-offset-3 col-md-9")
               button(type="submit" class="btn btn-default") Create Account

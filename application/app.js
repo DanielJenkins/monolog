@@ -10,7 +10,7 @@ var app = express();
 var urlParser = bodyParser.urlencoded({ extended: false });//
 var LocalStrategy = passportLocal.Strategy;//
 
-
+//app.use(bodyParser.json());
 app.use(express.static('application/public'));
 
 //Login----------------------------------------
@@ -28,12 +28,9 @@ var userSchema = new Schema({
 mongoose.model('User',userSchema);
 var User = mongoose.model('User');
 
-
-
-
 //TEST USER----------------------------------------
 ////REMOVE THIS BLOCK ONCE THE ABILITY TO CREATE USERS IS COMPLETE
-User.remove({username: 'john'}, function(err) { //Clear all existing docs
+User.remove({}, function(err) { //Clear all existing docs
   if (err) throw err;
 });
 var johnny = new User({ //create doc
@@ -46,9 +43,6 @@ johnny.save(function(err) { //save doc
   console.log('Johnny Saved');
 });
 //END BLOCK TO REMOVE----------------------------------------
-
-
-
 
 var strategy = new LocalStrategy(function(username, password, done) {
   User.findOne({ username: username }, function(err, user) {
@@ -87,6 +81,20 @@ app.use(express.static('/public'));
 //Routes----------------------------------------
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/html/index.html'));
+});
+
+app.post('/newuser', urlParser, function(req, res) {
+  var newUser = new User({
+    email: req.body.joinEmail,
+    username: req.body.joinUsername,
+    password: req.body.joinPw
+  });
+  newUser.save(function(err, savedUser) {
+    if (err) throw err;
+    else {
+      res.redirect('/login');
+    }
+  });
 });
 
 app.post('/login', urlParser, passport.authenticate('local', {

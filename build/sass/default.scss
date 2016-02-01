@@ -23,6 +23,15 @@ body {
   background-color: $background;
   background-image: url("../images/wood.png");
 }
+
+.btn-default:active,
+.btn-default:focus {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+  box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+}
+
 h1, h2, h3, h4, h5, h6, a {
   font-family: $headerFont;
 }
@@ -122,7 +131,7 @@ ul.myNavbar:hover {
   box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
 .header {
-  color: $orange;
+  color: $blue;
   text-shadow: 1px 1px 2px $greenBlack;
   background-color: $greenDark;
   border-bottom-right-radius: 15px;
@@ -135,7 +144,7 @@ ul.myNavbar:hover {
 //Welcome----------------------------------------------
 #welcomeImg {
   border-radius: 35px;
-  box-shadow: 0px 0px 15px $orangeBlack;
+  box-shadow: 0px 0px 15px $greenBlack;
 }
 #welcomeLoginBtn {
   width: 100%;
@@ -163,11 +172,12 @@ ul.myNavbar:hover {
   box-shadow: 0 4px 6px $greenBlack;
 }
 #welcomeTextBox {
-  color: $greenDark;
+  color: $blue;
   text-weight: bold;
-  background-color: $orange;
+  text-shadow: 1px 1px 1px $greenBlack;
+  background-color: $blueDark;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px $orangeBlack;
+  box-shadow: 0px 0px 15px $greenDark;
 }
 .welcomeTextHeader {
   font-size: 50px;
