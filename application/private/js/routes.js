@@ -5,7 +5,7 @@ module.exports = function(app, passport) {
   app.use(express.static('application/public'));
 
   app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../html/index.html'));
+    res.sendFile(path.join(__dirname + '/../../public/html/index.html'));
   });
 
   app.post('/newuser', passport.authenticate('local-signup', {
@@ -31,7 +31,7 @@ module.exports = function(app, passport) {
 
   app.get('/success', function(req, res){
     console.log('login successful');
-    res.sendFile(path.join(__dirname + '/../html/home.html'));
+    res.sendFile(path.join(__dirname + '/../../public/html/home.html'));
   });
 
   app.post('/user', function(req, res) {

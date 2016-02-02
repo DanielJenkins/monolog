@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/monolog', function(err) {
   console.log('connected!');
 });
 
-require('./public/js/passport.js')(passport);
+require('./private/js/passport.js')(passport);
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./public/js/routes.js')(app,passport);
+require('./private/js/routes.js')(app,passport);
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {
