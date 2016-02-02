@@ -40,4 +40,9 @@ module.exports = function(app, passport) {
     if(user)
       res.send(user);
   });
+
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
 };
