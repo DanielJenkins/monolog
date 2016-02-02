@@ -1,10 +1,13 @@
 <!Doctype html>
-html
+html(ng-app="posting")
   head
     title MonoLog
     script(src="//code.jquery.com/jquery-1.12.0.min.js")
     script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js")
+    script(src="../js/all.js")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
     link(rel="stylesheet" type="text/css" href="css/default.css")
 body
@@ -26,8 +29,8 @@ body
   div(class="container-fluid")
     div(class="row headerSpacer")
     div(class="row")
-      div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 content")
-        h3 header
+      div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 content" ng-controller="homeController as home")
+        h3 {{home.user}}
         p body stuff
         h3 header
         p body stuff

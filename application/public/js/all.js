@@ -31,15 +31,30 @@ app.controller('welcomeController', function() {
  );
 app.controller('joinController', function() {
      vm = this;
-     vm.message = data.message;
    }
  );
 app.controller('loginpageController', function() {
      vm = this;
    }
  );
-app.controller('homeController', function() {
+app.controller('homeController', function($http, homeService) {
      vm = this;
+     homeService.userObj().then(function success(response) {
+        vm.user = response.data;
+      });
    }
  );
 
+angular.module('posting').factory('homeService', function($http) {
+  var getUser = function() {
+    return $http({
+      method: 'POST',
+      url: '/user'
+    });
+  }
+  return {
+    userObj: function() {
+      return getUser();
+    }
+  };
+});

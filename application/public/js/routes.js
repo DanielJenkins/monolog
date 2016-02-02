@@ -31,8 +31,13 @@ module.exports = function(app, passport) {
 
   app.get('/success', function(req, res){
     console.log('login successful');
-    console.log(req.user);
     res.sendFile(path.join(__dirname + '/../html/home.html'));
   });
 
+  app.post('/user', function(req, res) {
+    var user = req.user;
+    console.log('/user sending ' + req.user);
+    if(user)
+      res.send(user);
+  });
 };
