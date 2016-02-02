@@ -3,19 +3,13 @@ var app = angular.module('posting', ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when("/", {
-      templateUrl: "../html/welcome.html",
-      controller: "welcomeController",
-      controllerAs: "welcome"
+      templateUrl: "../html/welcome.html"
     })
     .when("/loginpage", {
-      templateUrl: "../html/login.html",
-      controller: "loginpageController",
-      controllerAs: "loginpage"
+      templateUrl: "../html/login.html"
     })
     .when("/joinpage", {
-      templateUrl: "../html/join.html",
-      controller: "joinController",
-      controllerAs: "join"
+      templateUrl: "../html/join.html"
     })
     .when("/home", {
       templateUrl: "../html/home.html",
@@ -25,23 +19,12 @@ app.config(['$routeProvider', function($routeProvider) {
   }
 ]);
 
-app.controller('welcomeController', function() {
-     vm = this;
-   }
- );
-app.controller('joinController', function() {
-     vm = this;
-   }
- );
-app.controller('loginpageController', function() {
-     vm = this;
-   }
- );
 app.controller('homeController', function($http, homeService) {
-     vm = this;
-     homeService.userObj().then(function success(response) {
-        vm.user = response.data;
-      });
+   vm = this;
+   homeService.userObj().then(function success(response) {
+      var email = response.data.local.email;
+      vm.username = email.substring(0,email.indexOf("@"));
+    });
    }
  );
 

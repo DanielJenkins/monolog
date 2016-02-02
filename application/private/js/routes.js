@@ -1,5 +1,7 @@
 var express = require('express');
 var path = require('path');
+var mongoose = require('mongoose');
+////require('./posts.js')(); AFTER CONVERTING TO MIDDLEWARE
 
 module.exports = function(app, passport) {
   app.use(express.static('application/public'));
@@ -36,12 +38,44 @@ module.exports = function(app, passport) {
 
   app.post('/user', function(req, res) {
     var user = req.user;
-    console.log('/user sending ' + req.user);
     if(user)
       res.send(user);
   });
 
-  app.get('/logout', function(req, res){
+  ////START CONVERT TO MIDDLEWARE-------------
+  var postSchema = mongoose.Schema({
+    username: {type: String, required: true},
+    postContent: {type: String, required: true},
+    hashtags: {type: Array}
+  });
+  var Post = mongoose.model('Post', postSchema);
+  ////END CONVERT TO MIDDLEWARE-------------
+
+  app.post('/newPost', function(req, res) {
+    var postContent = req.body.postContent;
+    var hashtags = [];
+    var postContentArray = postContent.split(' ');
+    for (var i = 0; i < postContentArray.length; i++) {
+      if (postContentArray[i].includes('#',0)) {
+        hashtags.push(postContentArray[i]);
+      };
+    };
+    new Post({
+      username: req.user,
+      postContent: postContent,
+      hashtags: hashtags
+    }).save(function(err,doc) {
+      if(err) {
+        res.json(err);
+      }
+      else {
+        console.log('New Post Generated');
+        res.sendFile(path.join(__dirname + '/../../public/html/home.html'));
+      }
+    });
+  });
+
+  app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
   });
