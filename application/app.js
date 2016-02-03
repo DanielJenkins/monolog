@@ -13,7 +13,6 @@ mongoose.connect('mongodb://localhost/monolog', function(err) {
 });
 
 require('./private/js/passport.js')(passport);
-//var Posts = require('./private/js/posts').Posts;
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));

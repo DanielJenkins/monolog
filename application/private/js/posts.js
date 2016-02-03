@@ -6,8 +6,6 @@ var postSchema = new Schema({
   postContent: {type: String, required: true},
   hashtags: {type: Array}
 });
-var Posts = mongoose.model('Posts', postSchema);
+var posts = mongoose.model('posts', postSchema);
 
-module.export = {
-  Posts: Posts
-};
+module.exports = posts;

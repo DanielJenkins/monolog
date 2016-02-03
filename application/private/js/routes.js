@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
-////require('./posts.js')(); AFTER CONVERTING TO MIDDLEWARE
+var Post = require('./posts.js');
 
 module.exports = function(app, passport) {
   app.use(express.static('application/public'));
@@ -41,15 +41,6 @@ module.exports = function(app, passport) {
     if(user)
       res.send(user);
   });
-
-  ////START CONVERT TO MIDDLEWARE-------------
-  var postSchema = mongoose.Schema({
-    username: {type: String, required: true},
-    postContent: {type: String, required: true},
-    hashtags: {type: Array}
-  });
-  var Post = mongoose.model('Post', postSchema);
-  ////END CONVERT TO MIDDLEWARE-------------
 
   app.post('/newPost', function(req, res) {
     var userdata = req.user.local.email;
