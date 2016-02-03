@@ -53,10 +53,12 @@ module.exports = function(app, passport) {
         hashtags.push(postContentArray[i]);
       };
     };
+    var today = new Date();
     new Post({
       username: userdata,
       postContent: postContent,
-      hashtags: hashtags
+      hashtags: hashtags,
+      dateCreated: today
     }).save(function(err,doc) {
       if(err) {
         res.json(err);

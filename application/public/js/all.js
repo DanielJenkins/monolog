@@ -19,6 +19,27 @@ app.config(['$routeProvider', function($routeProvider) {
   }
 ]);
 
+function timeSince(timeStamp) {
+  timeStamp = new Date(timeStamp);
+  var now = new Date(),
+    secondsPast = (now.getTime() - timeStamp.getTime()) / 1000;
+  if(secondsPast < 60){
+    return parseInt(secondsPast) + 's';
+  }
+  if(secondsPast < 3600){
+    return parseInt(secondsPast/60) + 'm';
+  }
+  if(secondsPast <= 86400){
+    return parseInt(secondsPast/3600) + 'h';
+  }
+  if(secondsPast > 86400){
+      day = timeStamp.getDate();
+      month = timeStamp.toDateString().match(/ [a-zA-Z]*/)[0].replace(" ","");
+      year = timeStamp.getFullYear() == now.getFullYear() ? "" :  " "+timeStamp.getFullYear();
+      return day + " " + month + year;
+  }
+}
+
 app.controller('homeController', function($http, userService, postService) {
   vm = this;
   userService.userObj().then(
@@ -29,10 +50,12 @@ app.controller('homeController', function($http, userService, postService) {
   );
   postService.postObj().then(
     function success(response) {
-      for (var i = 0; i < response.data.length; i++) {
-        console.log(response.data[i]);
+      var postArray = response.data;
+      for (var i = 0; i < postArray.length; i++) {
+        console.log(timeSince(postArray[i].dateCreated));
+        postArray[i].timeFromToday = timeSince(postArray[i].dateCreated);
       };
-      vm.postList = response.data;
+      vm.postList = postArray;
     }
   );
 });
