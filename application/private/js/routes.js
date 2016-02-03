@@ -52,16 +52,16 @@ module.exports = function(app, passport) {
   ////END CONVERT TO MIDDLEWARE-------------
 
   app.post('/newPost', function(req, res) {
+    var userdata = req.user.local.email;
+    console.log('USER: ' + userdata);
     var postContent = req.body.postContent;
     var hashtags = [];
     var postContentArray = postContent.split(' ');
     for (var i = 0; i < postContentArray.length; i++) {
-      if (postContentArray[i].includes('#',0)) {
+      if (postContentArray[i].indexOf('#') >= 0) {
         hashtags.push(postContentArray[i]);
       };
     };
-    var userdata = JSON.parse(req.user);
-    console.log('USER: ' + userdata);
     new Post({
       username: userdata,
       postContent: postContent,
