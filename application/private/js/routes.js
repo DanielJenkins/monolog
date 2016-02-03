@@ -54,8 +54,8 @@ module.exports = function(app, passport) {
   app.post('/newPost', function(req, res) {
     var userdata = req.user.local.email;
     console.log('USER: ' + userdata);
-    var postContent = req.body.postContent;
     var hashtags = [];
+    var postContent = req.body.postContent;
     var postContentArray = postContent.split(' ');
     for (var i = 0; i < postContentArray.length; i++) {
       if (postContentArray[i].indexOf('#') >= 0) {

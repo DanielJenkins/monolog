@@ -29,9 +29,14 @@ app.controller('homeController', function($http, userService, postService) {
   );
   postService.postObj().then(
     function success(response) {
-      console.log('RESPONSE: ' + response.data.postContent);//////WORK ON CONVERTING THIS OBJECT INTO USABLE DATA... MAY NEED JSONPARSE
-      console.log('VM.POSTS: ' + vm.posts);
-      vm.posts = response.data;
+      for (var i = 0; i < response.data.length; i++) {
+        console.log(response.data[i]);
+      };
+      console.log(response.data[0]);
+      vm.poster = response.data[0].username;
+      console.log('USERNAME in ANGULAR: ' + response.data[0].username);
+      vm.posts = response.data[0].postContent;
+      console.log('POSTS in ANGULAR: ' + response.data[0].username);
     }
   );
 });
