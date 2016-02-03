@@ -32,11 +32,7 @@ app.controller('homeController', function($http, userService, postService) {
       for (var i = 0; i < response.data.length; i++) {
         console.log(response.data[i]);
       };
-      console.log(response.data[0]);
-      vm.poster = response.data[0].username;
-      console.log('USERNAME in ANGULAR: ' + response.data[0].username);
-      vm.posts = response.data[0].postContent;
-      console.log('POSTS in ANGULAR: ' + response.data[0].username);
+      vm.postList = response.data;
     }
   );
 });
