@@ -46,5 +46,4 @@ body(ng-controller="homeController as home")
       div(class="col-xs-12 hidden-sm hidden-md hidden-lg break")
     div(class="row")
       div(class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-offset-2 col-lg-8 footer")
-        h3 header
-        p body stuff
+        h3() {{home.posts}} <!--ng-repeat="postContent in home.posts"-->

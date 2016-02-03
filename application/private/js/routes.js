@@ -60,8 +60,10 @@ module.exports = function(app, passport) {
         hashtags.push(postContentArray[i]);
       };
     };
+    var userdata = JSON.parse(req.user);
+    console.log('USER: ' + userdata);
     new Post({
-      username: req.user,
+      username: userdata,
       postContent: postContent,
       hashtags: hashtags
     }).save(function(err,doc) {
@@ -72,6 +74,17 @@ module.exports = function(app, passport) {
         console.log('New Post Generated');
         res.sendFile(path.join(__dirname + '/../../public/html/home.html'));
       }
+    });
+  });
+
+  app.get('/posts', function(req, res) {
+    Post.find(function(err, posts) {
+      if (err) {
+        throw err;
+      }
+      else {
+        res.send(posts);
+      };
     });
   });
 
