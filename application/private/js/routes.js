@@ -64,7 +64,6 @@ module.exports = function(app, passport) {
         res.json(err);
       }
       else {
-        console.log('New Post Generated');
         res.sendFile(path.join(__dirname + '/../../public/html/home.html'));
       }
     });
@@ -78,7 +77,7 @@ module.exports = function(app, passport) {
       else {
         res.send(posts);
       };
-    });
+    }).sort({dateCreated: -1}).limit(30);
   });
 
   app.get('/logout', function(req, res) {

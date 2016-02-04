@@ -75,14 +75,6 @@ ul.myNavbar:hover {
   width: 100%;
   border-radius: 35px; }
 
-.footer {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  color: #1D81B7;
-  text-weight: bold;
-  text-shadow: 1px 1px 1px #090909;
-  background-color: #33454F; }
-
 .form-control:focus {
   -webkit-box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19;
   box-shadow: inset 0 1px 1px #41643F, 0 0 8px #23DA19; }
@@ -139,3 +131,36 @@ ul.myNavbar:hover {
   font-size: 50px;
   margin: 0 auto;
   max-width: 460px; }
+
+.footer {
+  padding-bottom: 10px;
+  color: #A1A1A1;
+  text-weight: bold;
+  text-shadow: 1px 1px 1px #090909;
+  background-color: #33454F;
+  box-shadow: 0px 10px 10px #090909; }
+
+.post {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px #090909;
+  background-color: #1D81B7; }
+
+.postContent {
+  margin-left: 15px;
+  margin-bottom: 0px;
+  color: #A1A1A1;
+  text-shadow: 1px 1px 1px #0B0B0B; }
+
+.postUsername {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #A1A1A1; }
+
+.timestamp {
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #A1A1A1;
+  opacity: 0.5; }
