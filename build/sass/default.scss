@@ -1,43 +1,67 @@
-$orange: #7c674e;
-$orangeGrey: #A1A1A1;
-$orangeBlack: #0B0B0B;
-$green: #41643F;
-$greenBright: #23DA19;
-$greenBlack: #090909;
-$greenDark: #194617;
-$blue: #1D81B7;
-$blueDark: #33454F;
+// http://paletton.com/#uid=72Q0v0kvpsL0CO1jnxlGUjcZx0u
+$white: #E5E9E5;
+$black: #000300;
+$greenPale: #50CB58;
+$green: #03B40F;
+$greenDark: #006206;
+$greenBlack: #000300;
+$bluePale: #40979F;
+$blue: #04808B;
+$blueDark: #01555D;
+$blueBlack: #000202;
+$orange: #E56E04;
+$orangeDark: #994800;
+$red: #E50A04;
 
-$headerBackground: $green;
-$headerColor: $greenBlack;
-$background: $orange;
-$paragraphColor: $orangeBlack;
+$background: $white;
+//Navbar
+$navBackground: $blueDark;
+$navCollapseBackground: $blue;
+$navCollapseBorder: $background;
+$navCollapseBackgroundHover: $background;
+$navCollapseBorderHover: $blue;
+$navLink: $white;
+$navLinkBackground: $navBackground;
+$navLinkBackgroundHover: $blue;
+//Welcome Page
+$welcomeBtn: $white;
+$welcomeBtnBackground: $blueDark;
+$welcomeBtnBackgroundHover: $blue;
+$welcomeText: $blue;
+$welcomeTextBackground: $white;
+//Header
+$header: $red;
+$headerBackground: $greenDark;
+//Login
+$label: $red;
+//Posts
+$allPostsBackground: $red;
+$postBackground: $red;
+$postContent: $red;
+$postUsername: $red;
+$timestamp: $red;
 
 $headerFont: 'Noto Sans', Helvetica, sans-serif;
 $paragraphFont: 'Lora', Georgia, serif;
 
-a {
-  background-color: $headerBackground;
-}
 body {
   background-color: $background;
-  background-image: url("../images/wood.png");
 }
 
 .btn-default:active,
 .btn-default:focus {
   outline: 0;
   background-image: none;
-  -webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
-  box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+  //-webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+  //box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
 
 h1, h2, h3, h4, h5, h6, a {
   font-family: $headerFont;
 }
 label {
-  color: $greenBlack;
-  text-shadow: 0px 0px 2px $greenBright;
+  color: $label;
+  //text-shadow: 0px 0px 2px $greenBright;
 }
 p {
   font-family: $paragraphFont;
@@ -50,38 +74,37 @@ p {
   border-radius: 10px;
 }
 .collapseButton {
-  background-color: $background;
-  border-color: $orangeGrey;
+  background-color: $navCollapseBackground;
+  border-color: $navCollapseBorder;
 }
 .collapseButton:hover {
-  background-color: $background;
-  border-color: $greenBright;
+  background-color: $navCollapseBackgroundHover;
+  border-color: $navCollapseBorderHover;
 }
 .headerSpacer {
   margin-top: 50px;
 }
 .icon-bar {
-  background-color: $headerBackground;
+  background-color: $navBackground;
 }
 .myNavbar {
   font-family: $headerFont;
-  color: $headerColor;
-  background-color: $headerBackground;
-  border-color: $background;
+  background-color: $navBackground;
 }
 .navbar-brand {
   padding: 5px;
 }
 .navbar-nav > li > a {
-  color: $orangeGrey;
-  background-color: $headerBackground;
+  color: $navLink;
+  background-color: $navLinkBackground;
 }
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-  background-color: $greenDark;
+  background-color: $navLinkBackgroundHover;
+  text-shadow: 0px 0px 4px $black;
 }
-ul.myNavbar:hover {
-  background-color: black;
-}
+//// ul.myNavbar:hover {
+////   background-color: red;
+//// }
 //Every Page----------------------------------------------
 .big-spacer {
   margin-top: 100px;
@@ -92,101 +115,119 @@ ul.myNavbar:hover {
 }
 .content {
   background-color: $background;
-  box-shadow: inset 0px 0px 5px $greenDark;
+  //box-shadow: inset 0px 0px 5px $greenDark;
 }
 .fillerImg {
   width:100%;
   border-radius: 35px;
 }
 .form-control:focus {
-  -webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
-  box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
-}
-.header {
-  color: $blue;
-  text-shadow: 1px 1px 2px $greenBlack;
-  background-color: $greenDark;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  box-shadow: 0px 0px 15px $greenBlack;
+  //-webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
+  //box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
 .mini-spacer {
   padding-top: 20px;
 }
 //Welcome----------------------------------------------
+.header {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  background-color: $blue;
+}
+.headerImg {
+  position: absolute;
+  left: -9999px;
+  right: -9999px;
+  top: -350px;
+  margin: auto;
+  opacity: 0.9;
+}
+.headerText {
+  color: $white;
+  text-shadow: 1px 1px 4px $blueBlack;
+  margin-left: 15px;
+  margin-bottom: 35px;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  font-size: 50px;
+}
 #welcomeImg {
   border-radius: 35px;
-  box-shadow: 0px 0px 15px $greenBlack;
 }
 #welcomeLoginBtn {
   width: 100%;
   max-width: 200px;
-  color: $orangeGrey;
-  background-color: $green;
-  border: 1px solid $orange;
-  box-shadow: 0 4px 6px $greenBlack;
+  color: $welcomeBtn;
+  background-color: $welcomeBtnBackground;
 }
 #welcomeLoginBtn:focus, #welcomeLoginBtn:hover {
-  background-color: $greenDark;
-  box-shadow: 0 4px 6px $greenBlack;
+  background-color: $welcomeBtnBackgroundHover;
+  text-shadow: 0px 0px 4px $black;
 }
 #welcomeJoinBtn {
   margin-top: 10px;
   width: 100%;
   max-width: 200px;
-  color: $orangeGrey;
-  background-color: $green;
-  border: 1px solid $orange;
-  box-shadow: 0 4px 6px $greenBlack;
+  color: $welcomeBtn;
+  background-color: $welcomeBtnBackground;
 }
 #welcomeJoinBtn:focus, #welcomeJoinBtn:hover {
-  background-color: $greenDark;
-  box-shadow: 0 4px 6px $greenBlack;
+  background-color: $welcomeBtnBackgroundHover;
+  text-shadow: 0px 0px 4px $black;
 }
 #welcomeTextBox {
-  color: $blue;
+  color: $welcomeText;
   text-weight: bold;
-  text-shadow: 1px 1px 1px $greenBlack;
-  background-color: $blueDark;
-  border-radius: 15px;
-  box-shadow: 0px 0px 15px $greenDark;
-}
-.welcomeTextHeader {
-  font-size: 50px;
-  margin: 0 auto;
-  max-width: 460px;
+  //text-shadow: 1px 1px 1px $greenBlack;
+  background-color: $welcomeTextBackground;
+  //border-radius: 15px;
+  //box-shadow: 0px 0px 15px $greenDark;
 }
 //Posts----------------------------------------------
-.footer {
+.allPosts {
   padding-bottom: 10px;
-  color: $orangeGrey;
   text-weight: bold;
-  text-shadow: 1px 1px 1px $greenBlack;
-  background-color: $blueDark;
-  box-shadow: 0px 10px 10px $greenBlack;
+  //text-shadow: 1px 1px 1px $greenBlack;
+  background-color: $allPostsBackground;
+  //box-shadow: 0px 10px 10px $greenBlack;
 }
 .post {
   margin-top: 10px;
   padding: 5px 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 6px $greenBlack;
-  background-color: $blue;
+  //box-shadow: 0px 0px 6px $greenBlack;
+  background-color: $postBackground;
 }
 .postContent {
   margin-left: 15px;
   margin-bottom: 0px;
-  color: $orangeGrey;
-  text-shadow: 1px 1px 1px $orangeBlack;
+  color: $postContent;
+  //text-shadow: 1px 1px 1px $orangeBlack;
 }
 .postUsername {
   margin-bottom: 0px;
   font-size: 14px;
   font-weight: bold;
-  color: $orangeGrey;
+  color: $postUsername;
 }
 .timestamp {
   margin-bottom: 0px;
   font-size: 12px;
-  color: $orangeGrey;
+  color: $timestamp;
   opacity: 0.5;
+}
+
+.footer {
+  bottom:0;
+  padding: 15px;
+  background-color: $navBackground;
+  color: $blue;
+}
+.footerText {
+  font-size: 88px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 2px $blueBlack;
 }
