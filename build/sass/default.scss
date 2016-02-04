@@ -29,11 +29,8 @@ $welcomeBtnBackground: $blueDark;
 $welcomeBtnBackgroundHover: $blue;
 $welcomeText: $blue;
 $welcomeTextBackground: $white;
-//Header
-$header: $red;
-$headerBackground: $greenDark;
 //Login
-$label: $red;
+$label: $blue;
 //Posts
 $allPostsBackground: $red;
 $postBackground: $red;
@@ -61,7 +58,6 @@ h1, h2, h3, h4, h5, h6, a {
 }
 label {
   color: $label;
-  //text-shadow: 0px 0px 2px $greenBright;
 }
 p {
   font-family: $paragraphFont;
@@ -102,9 +98,6 @@ p {
   background-color: $navLinkBackgroundHover;
   text-shadow: 0px 0px 4px $black;
 }
-//// ul.myNavbar:hover {
-////   background-color: red;
-//// }
 //Every Page----------------------------------------------
 .big-spacer {
   margin-top: 100px;
