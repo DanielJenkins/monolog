@@ -124,12 +124,36 @@ p {
   text-weight: bold;
   background-color: #E5E9E5; }
 
+#homeHeader {
+  margin-bottom: 5px; }
+
 .postForm {
   background-color: #04808B;
   background-image: url("../images/logEnds.jpg");
   background-position: center;
   background-size: auto;
+  z-index: 3; }
+
+#topButtonCover {
+  height: 400px;
+  background-color: #E5E9E5;
   z-index: 2; }
+
+#topButton {
+  color: #04808B;
+  position: fixed;
+  bottom: 30%; }
+
+#topButtonSm {
+  z-index: 10;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 10px;
+  border: 1px solid #E5E9E5;
+  border-radius: 5px;
+  color: #E5E9E5;
+  background-color: #01555D; }
 
 .post {
   padding: 5px 10px;
