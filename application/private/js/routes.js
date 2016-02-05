@@ -2,6 +2,8 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var Post = require('./posts.js');
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 
 module.exports = function(app, passport) {
   app.use(express.static('application/public'));
@@ -81,8 +83,9 @@ module.exports = function(app, passport) {
     }).sort({dateCreated: -1}).limit(30);
   });
 
-  app.post('/search', function(req, res) {
-    console.log("req.body.searchTerm: " + req.body.searchTerm);
+  app.post('/search', jsonParser, function(req, res) {
+    console.log("running search");
+    console.log(req.body);
     Post.find({hashtags: req.body.searchTerm}, function(err, posts) {
       if (err) {
         throw err;

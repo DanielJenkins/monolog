@@ -40,7 +40,8 @@ function timeSince(timeStamp) {
   }
 }
 
-app.controller('homeController', function($http, userService, postService) {
+//Controller---------------------------------------------------
+app.controller('homeController', function($http, userService, postService, searchService) {
   vm = this;
   userService.userObj().then(
     function success(response) {
@@ -57,8 +58,28 @@ app.controller('homeController', function($http, userService, postService) {
       vm.postList = postArray;
     }
   );
+
+  vm.runSearch = function() {
+    searchService.searchObj().then(
+      function success(response) {
+        var searchArray = response.data;
+        for (var i = 0; i < searchArray.length; i++) {
+          searchArray[i].timeFromToday = timeSince(searchArray[i].dateCreated);
+        };
+        vm.postList = searchArray;
+        if(searchArray.length === 0) {
+          vm.searchErr = 'No results were found. Please search for another hashtag.';
+        }
+        else {
+          vm.searchErr = '';
+        };
+      }
+    );
+    vm.searchTerm = '';
+  };
 });
 
+//Services---------------------------------------------------
 angular.module('posting').factory('userService', function($http) {
   var getUser = function() {
     return $http({
@@ -83,6 +104,21 @@ angular.module('posting').factory('postService', function($http) {
   return {
     postObj: function() {
       return getPosts();
+    }
+  };
+});
+
+angular.module('posting').factory('searchService', function($http) {
+  var submit = function() {
+    return $http({
+      method: 'POST',
+      url: '/search',
+      data: { searchTerm: vm.searchTerm }
+    });
+  }
+  return {
+    searchObj: function() {
+      return submit();
     }
   };
 });
