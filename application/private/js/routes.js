@@ -86,7 +86,8 @@ module.exports = function(app, passport) {
   app.post('/search', jsonParser, function(req, res) {
     console.log("running search");
     console.log(req.body);
-    Post.find({hashtags: req.body.searchTerm}, function(err, posts) {
+    console.log(req.body.searchObj);
+    Post.find(req.body.searchObj, function(err, posts) {
       if (err) {
         throw err;
       }

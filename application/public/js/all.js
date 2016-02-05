@@ -60,6 +60,7 @@ app.controller('homeController', function($http, userService, postService, searc
   );
 
   vm.runSearch = function() {
+    console.log('running search on ' + vm.searchTerm);
     searchService.searchObj().then(
       function success(response) {
         var searchArray = response.data;
@@ -110,10 +111,17 @@ angular.module('posting').factory('postService', function($http) {
 
 angular.module('posting').factory('searchService', function($http) {
   var submit = function() {
+    var mySearchObj = {}
+    if(vm.searchTerm == '') {
+      mySearchObj = {}
+    }
+    else {
+      mySearchObj = {hashtags: vm.searchTerm};
+    };
     return $http({
       method: 'POST',
       url: '/search',
-      data: { searchTerm: vm.searchTerm }
+      data: {searchObj: mySearchObj}
     });
   }
   return {
