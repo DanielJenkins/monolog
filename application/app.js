@@ -22,7 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-require('./private/js/routes.js')(app,passport);
+require('./private/js/routes.js')(app,passport,bodyParser);
 
 var port = process.env.PORT || 1337;
 app.listen(port, function() {

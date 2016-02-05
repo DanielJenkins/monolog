@@ -49,7 +49,8 @@ module.exports = function(app, passport) {
     var postContent = req.body.postContent;
     var postContentArray = postContent.split(' ');
     for (var i = 0; i < postContentArray.length; i++) {
-      if (postContentArray[i].indexOf('#') >= 0) {
+      if (postContentArray[i].indexOf('#') == 0) {
+        postContentArray[i] = postContentArray[i].substring(1);
         hashtags.push(postContentArray[i]);
       };
     };
@@ -71,6 +72,18 @@ module.exports = function(app, passport) {
 
   app.get('/posts', function(req, res) {
     Post.find(function(err, posts) {
+      if (err) {
+        throw err;
+      }
+      else {
+        res.send(posts);
+      };
+    }).sort({dateCreated: -1}).limit(30);
+  });
+
+  app.post('/search', function(req, res) {
+    console.log("req.body.searchTerm: " + req.body.searchTerm);
+    Post.find({hashtags: req.body.searchTerm}, function(err, posts) {
       if (err) {
         throw err;
       }

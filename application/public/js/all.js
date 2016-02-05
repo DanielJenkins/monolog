@@ -52,7 +52,6 @@ app.controller('homeController', function($http, userService, postService) {
     function success(response) {
       var postArray = response.data;
       for (var i = 0; i < postArray.length; i++) {
-        console.log(timeSince(postArray[i].dateCreated));
         postArray[i].timeFromToday = timeSince(postArray[i].dateCreated);
       };
       vm.postList = postArray;
