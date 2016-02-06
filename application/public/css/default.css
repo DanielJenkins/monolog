@@ -13,7 +13,8 @@ h1, h2, h3, h4, h5, h6, a {
   font-family: "Noto Sans", Helvetica, sans-serif; }
 
 label {
-  color: #04808B; }
+  color: #04808B;
+  font-family: "Lora", Georgia, serif; }
 
 .mini-spacer {
   padding-top: 20px; }
@@ -59,11 +60,18 @@ p {
   width: 100%;
   border-radius: 35px; }
 
+.formHelp {
+  color: #04808B;
+  text-weight: bold;
+  text-align: center; }
+
 .footer {
+  position: fixed;
   bottom: 0;
   padding: 15px;
   background-color: #01555D;
-  color: #04808B; }
+  color: #04808B;
+  z-index: -1; }
 
 .footerText {
   font-size: 88px;

@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 label {
   color: $label;
+  font-family: $paragraphFont;
 }
 .mini-spacer {
   padding-top: 20px;
@@ -113,13 +114,20 @@ p {
   //-webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
   //box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
+.formHelp {
+  color: $label;
+  text-weight: bold;
+  text-align: center;
+}
 
 //Welcome----------------------------------------------
 .footer {
+  position: fixed;
   bottom:0;
   padding: 15px;
   background-color: $navBackground;
   color: $blue;
+  z-index: -1;
 }
 .footerText {
   font-size: 88px;
