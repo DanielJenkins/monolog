@@ -46,7 +46,7 @@ app.controller('homeController', function($http, userService, postService, searc
   userService.userObj().then(
     function success(response) {
       var email = response.data.local.email;
-      vm.username = email.substring(0,email.indexOf("@"));
+      vm.username = email;
     }
   );
   postService.postObj().then(
@@ -69,7 +69,7 @@ app.controller('homeController', function($http, userService, postService, searc
         };
         vm.postList = searchArray;
         if(searchArray.length === 0) {
-          vm.searchErr = 'No results were found. Please search for another hashtag.';
+          vm.searchErr = 'No results were found. Please try another search.';
         }
         else {
           vm.searchErr = '';
@@ -78,6 +78,12 @@ app.controller('homeController', function($http, userService, postService, searc
     );
     vm.searchTerm = '';
   };
+
+  vm.findUser = function(username) {
+    vm.searchTerm = username;
+    console.log('clicked on' + vm.searchTerm)
+    vm.runSearch();
+  }
 });
 
 //Services---------------------------------------------------
@@ -116,7 +122,17 @@ angular.module('posting').factory('searchService', function($http) {
       mySearchObj = {}
     }
     else {
-      mySearchObj = {hashtags: vm.searchTerm};
+      if(vm.searchTerm.indexOf('@') == 0) {
+        var condensedSrch = vm.searchTerm.substring(1);
+        mySearchObj = {'username': condensedSrch};
+      }
+      else if(vm.searchTerm.indexOf('#') == 0) {
+        var condensedSrch = vm.searchTerm.substring(1);
+        mySearchObj = {'hashtags': condensedSrch};
+      }
+      else {
+        mySearchObj = {$or: [{'hashtags': vm.searchTerm},{'username': vm.searchTerm}]};
+      };
     };
     return $http({
       method: 'POST',

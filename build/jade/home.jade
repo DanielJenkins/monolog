@@ -18,15 +18,15 @@ body(ng-controller="homeController as home")
           span(class="sr-only") Toggle navigation
           span(class="icon-bar")
           span(class="icon-bar")
-        a(class="navbar-brand" href="#/" ng-click="home.runSearch()")
+        a(class="navbar-brand" href="#/" ng-click="home.findUser('')")
           img(alt="Brand" src="../images/pixelLog.png" class="brandImg")
       div(class="collapse navbar-collapse" id="navbar-collapse-1")
         ul(class="nav navbar-nav navbar-right")
           form(class="navbar-form navbar-left" role="search" ng-submit="home.runSearch()" method="post")
             div(class="form-group")
-              input(name="home.searchTerm" type="text" class="form-control" placeholder="Search Hashtags" ng-model="home.searchTerm")
+              input(name="home.searchTerm" type="text" class="form-control" placeholder="@user or #hashtag" ng-model="home.searchTerm")
           li(class="active")
-            a {{home.username}}
+            a(href="#/" ng-click="home.findUser('')") {{home.username}}
           li(class="active")
             a(href="https://github.com/DanielJenkins/monolog" target="_blank") About
           li(class="active")
@@ -52,7 +52,7 @@ body(ng-controller="homeController as home")
               form(class="form-horizontal" action="/newPost" method="post")
                 div(class="form-group")
                   div(class="col-xs-12")
-                    textarea(name="postContent" class="form-control" rows="3" placeholder="Go out on a limb..." maxlength="151")
+                    textarea(name="postContent" class="form-control" rows="3" placeholder="Go out on a limb..." maxlength="151" required)
                 div(class="form-group")
                   div(class="col-xs-12 text-center")
                     button(type="submit" class="btn btn-default") Plant It!
@@ -73,7 +73,7 @@ body(ng-controller="homeController as home")
           div(class="col-xs-12")
             div(class="row")
               div(class="col-xs-12 col-sm-12 col-md-8 col-lg-9")
-                p(class="postUsername") {{post.username}}
+                a(class="postUsername" ng-click="home.findUser(post.username)") {{post.username}}
               div(class="hidden-xs hidden-sm col-md-4 col-lg-3")
                 p(class="timestamp") Planted {{post.timeFromToday}} ago
               div(class="col-xs-12 col-sm-12 hidden-md hidden-lg")
