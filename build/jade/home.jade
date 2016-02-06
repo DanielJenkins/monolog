@@ -66,7 +66,7 @@ body(ng-controller="homeController as home")
       div(class="hidden-xs col-sm-1 col-md-2 col-lg-2")
         div(id="topButtonCover")
       div(class="col-xs-12 col-sm-10 col-md-8 col-lg-8")
-        div(class="row")
+        div(class="row" id="searchErr")
           div(class="col-xs-12")
             p {{home.searchErr}}
         div(class="row post" ng-repeat="post in home.postList")

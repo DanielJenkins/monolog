@@ -95,6 +95,9 @@ p {
   bottom: 0;
   font-size: 50px; }
 
+#searchErr {
+  height: 0px; }
+
 #welcomeImg {
   border-radius: 35px; }
 
@@ -177,6 +180,7 @@ p {
   opacity: 0.6; }
 
 .postUsername:hover {
+  cursor: pointer;
   color: #000202; }
 
 .timestamp {
