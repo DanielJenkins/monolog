@@ -45,7 +45,7 @@ module.exports = function(app, passport) {
   });
 
   app.post('/newPost', function(req, res) {
-    var userdata = req.user.local.email;
+    var userdata = req.user.local.username;
     console.log('USER: ' + userdata);
     var hashtags = [];
     var postContent = req.body.postContent;

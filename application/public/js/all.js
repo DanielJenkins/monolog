@@ -45,8 +45,8 @@ app.controller('homeController', function($http, userService, postService, searc
   vm = this;
   userService.userObj().then(
     function success(response) {
-      var email = response.data.local.email;
-      vm.username = email;
+      var username = response.data.local.username;
+      vm.username = username;
     }
   );
   postService.postObj().then(
