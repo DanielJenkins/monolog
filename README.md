@@ -1,6 +1,6 @@
 # MonoLog
 
-A site for people to share text posts (A basic Twitter Clone).
+A site for people to share short, text-based posts (A basic Twitter Clone).
 
 This project is a demonstration of my ability to use the MEAN stack (MonogoDB, Express, Angular, Node).
 
@@ -50,5 +50,5 @@ This project is a demonstration of my ability to use the MEAN stack (MonogoDB, E
 - Use the search box in the navigation header to search for users and hashtags.
 
 ![MonoLog Homepage on a Small Viewport](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/homepage-mobile.png)
-g
+
 ![MonoLog Userpage after a Search for 'Football'](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/searchResults-Football.png)
