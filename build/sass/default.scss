@@ -43,7 +43,6 @@ body {
 .btn-default:active,
 .btn-default:focus {
   outline: 0;
-  background-image: none;
   //-webkit-box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
   //box-shadow: inset 0 1px 1px $green,0 0 8px $greenBright;
 }
@@ -218,6 +217,13 @@ p {
 }
 
 //Posts----------------------------------------------
+#endImg {
+  @extend .post;
+  height: 156px;
+  background-image: url("../images/log4.jpg");
+  background-size: 100% auto;
+  background-position: center center;
+}
 .post {
   padding: 5px 10px;
   margin-bottom: 5px;

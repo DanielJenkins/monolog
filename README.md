@@ -1,8 +1,8 @@
 # MonoLog
 
-## A site for people to share text posts (A basic Twitter Clone)
+A site for people to share text posts (A basic Twitter Clone)
 
-**Built Upon the Following Technologies:**
+## Built Upon the Following Technologies:
 - MongoB
 - Express
 - Angular
@@ -14,9 +14,18 @@
 - Passport
 - Bootstrap
 - BCrypt
-- jQuery (for Bootstrap only)
+- jQuery
 
-### To run an Instance of this app, you need to:
+## Notable Features:
+- Fully responsive web design (site appearance changes with viewport size)
+- A user can create a login
+- Login passwords are protected with BCrypt encryption
+- A user can log in and access pages that are not visible without logging in (Powered by Passport and MongoDB/Mongoose)
+- A user can generate posts
+- A user can search posts based on hashtag or user who posted them
+- A user can log out
+
+## To run an Instance of this app, you need to:
 
 **1. Download files**
 - I.E. clone this repository
