@@ -51,6 +51,6 @@ This project is a demonstration of my ability to use the MEAN stack (MonogoDB, E
 
 ![MonoLog Welcome Page](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/welcome-screenshot.png)
 
-![MonoLog Homepage on a Small Viewport](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/welcome-mobile-screenshot.png)
-
 ![MonoLog Userpage after a Search for 'Football'](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/searchResults-Football.png)
+
+![MonoLog Homepage on a Small Viewport](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/welcome-mobile-screenshot.png)
