@@ -49,6 +49,8 @@ This project is a demonstration of my ability to use the MEAN stack (MonogoDB, E
 - You can tag other users and add hashtags by typing @username or #hashtag. Be sure to leave a space on each side of your desired tags. If you do not do this, any extra letters or punctuation will be treated as part of the tag.
 - Use the search box in the navigation header to search for users and hashtags.
 
-![MonoLog Homepage on a Small Viewport](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/homepage-mobile.png)
+![MonoLog Welcome Page](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/welcome-screenshot.png)
+
+![MonoLog Homepage on a Small Viewport](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/welcome-mobile-screenshot.png)
 
 ![MonoLog Userpage after a Search for 'Football'](https://github.com/DanielJenkins/monolog/blob/master/screenshotsPlusImages/searchResults-Football.png)
