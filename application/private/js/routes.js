@@ -48,12 +48,17 @@ module.exports = function(app, passport) {
     var userdata = req.user.local.username;
     console.log('USER: ' + userdata);
     var hashtags = [];
+    var usertags = [];
     var postContent = req.body.postContent;
     var postContentArray = postContent.split(' ');
     for (var i = 0; i < postContentArray.length; i++) {
-      if (postContentArray[i].indexOf('#') == 0) {
-        postContentArray[i] = postContentArray[i].substring(1);
-        hashtags.push(postContentArray[i]);
+      switch (postContentArray[i].substring(0,1)) {
+        case '#':
+          hashtags.push(postContentArray[i].substring(1));
+          break; 
+        case '@':
+          usertags.push(postContentArray[i].substring(1));
+          break;
       };
     };
     var today = new Date();
@@ -61,6 +66,7 @@ module.exports = function(app, passport) {
       username: userdata,
       postContent: postContent,
       hashtags: hashtags,
+      usertags: usertags,
       dateCreated: today
     }).save(function(err,doc) {
       if(err) {
@@ -84,9 +90,6 @@ module.exports = function(app, passport) {
   });
 
   app.post('/search', jsonParser, function(req, res) {
-    console.log("running search");
-    console.log(req.body);
-    console.log(req.body.searchObj);
     Post.find(req.body.searchObj, function(err, posts) {
       if (err) {
         throw err;

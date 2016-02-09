@@ -81,7 +81,6 @@ app.controller('homeController', function($http, userService, postService, searc
 
   vm.findUser = function(username) {
     vm.searchTerm = username;
-    console.log('clicked on' + vm.searchTerm)
     vm.runSearch();
   }
 });
@@ -122,16 +121,19 @@ angular.module('posting').factory('searchService', function($http) {
       mySearchObj = {}
     }
     else {
+      console.log(vm.searchTerm);
       if(vm.searchTerm.indexOf('@') == 0) {
         var condensedSrch = vm.searchTerm.substring(1);
-        mySearchObj = {'username': condensedSrch};
+        console.log('searching for ' + condensedSrch);
+        mySearchObj = {$or: [{'username': condensedSrch},{'usertags': condensedSrch}]};
+        //mySearchObj = {'username': condensedSrch};
       }
       else if(vm.searchTerm.indexOf('#') == 0) {
         var condensedSrch = vm.searchTerm.substring(1);
         mySearchObj = {'hashtags': condensedSrch};
       }
       else {
-        mySearchObj = {$or: [{'hashtags': vm.searchTerm},{'username': vm.searchTerm}]};
+        mySearchObj = {$or: [{'hashtags': vm.searchTerm},{'username': vm.searchTerm},{'usertags': vm.searchTerm}]};
       };
     };
     return $http({
