@@ -73,7 +73,10 @@ module.exports = function(app, passport) {
         res.json(err);
       }
       else {
-        res.sendFile(path.join(__dirname + '/../../public/html/home.html'));
+        console.log('marking');
+        console.log(__dirname);
+        console.log(path);
+        res.redirect('/success');
       }
     });
   });
