@@ -11,7 +11,7 @@ This project is a demonstration of my ability to use the MEAN stack (MonogoDB, E
 - A user can log in and access pages that are not visible without logging in (Powered by Passport and MongoDB/Mongoose)
 - A user can log out
 - A user can generate posts
-- A user can search posts based on hashtag or user who posted them. A search for `#searchTerm` (with the `#`) will return all posts that include `#searchTerm`. A search for `@username` (with the `@`) will return all posts that were posted by the user `username`. A search for `searchTerm` will return all posts that include the hashtag `searchTerm` and all posts by the user `searchTerm`.
+- A user can search posts based on hashtag or user who posted them. A search for `#searchTerm` (with the `#`) will return all posts that include `#searchTerm`. A search for `@username` (with the `@`) will return all posts that were posted by the user `username` and all posts that mention `@username`. A search for `searchTerm` will return all posts that include the hashtag `#searchTerm`, all posts by the user `searchTerm`, and all posts that mention `@searchterm`.
 
 ## Built Upon the Following Technologies:
 - MongoB

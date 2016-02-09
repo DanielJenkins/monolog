@@ -6,8 +6,9 @@ var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var db = require('./private/js/mongodb.js');
 
-mongoose.connect('mongodb://localhost/monolog', function(err) {
+mongoose.connect(db.db, function(err) {
   if (err) throw err;
   console.log('connected!');
 });

@@ -123,17 +123,17 @@ angular.module('posting').factory('searchService', function($http) {
     else {
       console.log(vm.searchTerm);
       if(vm.searchTerm.indexOf('@') == 0) {
-        var condensedSrch = vm.searchTerm.substring(1);
+        var condensedSrch = vm.searchTerm.substring(1).toLowerCase();
         console.log('searching for ' + condensedSrch);
         mySearchObj = {$or: [{'username': condensedSrch},{'usertags': condensedSrch}]};
-        //mySearchObj = {'username': condensedSrch};
       }
       else if(vm.searchTerm.indexOf('#') == 0) {
-        var condensedSrch = vm.searchTerm.substring(1);
+        var condensedSrch = vm.searchTerm.substring(1).toLowerCase();
         mySearchObj = {'hashtags': condensedSrch};
       }
       else {
-        mySearchObj = {$or: [{'hashtags': vm.searchTerm},{'username': vm.searchTerm},{'usertags': vm.searchTerm}]};
+        var condensedSrch = vm.searchTerm.toLowerCase()
+        mySearchObj = {$or: [{'hashtags': condensedSrch},{'username': condensedSrch},{'usertags': condensedSrch}]};
       };
     };
     return $http({

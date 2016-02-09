@@ -46,18 +46,18 @@ module.exports = function(app, passport) {
 
   app.post('/newPost', function(req, res) {
     var userdata = req.user.local.username;
-    console.log('USER: ' + userdata);
     var hashtags = [];
     var usertags = [];
+    usertags.push(userdata.toLowerCase());
     var postContent = req.body.postContent;
     var postContentArray = postContent.split(' ');
     for (var i = 0; i < postContentArray.length; i++) {
       switch (postContentArray[i].substring(0,1)) {
         case '#':
-          hashtags.push(postContentArray[i].substring(1));
+          hashtags.push(postContentArray[i].substring(1).toLowerCase());
           break; 
         case '@':
-          usertags.push(postContentArray[i].substring(1));
+          usertags.push(postContentArray[i].substring(1).toLowerCase());
           break;
       };
     };
