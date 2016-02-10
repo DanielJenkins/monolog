@@ -4,6 +4,10 @@ A site for people to share short, text-based posts (A basic Twitter Clone).
 
 This project is a demonstration of my ability to use the MEAN stack (MonogoDB, Express, Angular, Node).
 
+**An instance of this application can be viewed at: [http://monolog.herokuapp.com/](http://monolog.herokuapp.com/)**
+- Username: `Snoopy`
+- Password: `123Snoopy`
+
 ## Notable Features:
 - Fully responsive web design (site appearance changes with viewport size)
 - A user can create a login
