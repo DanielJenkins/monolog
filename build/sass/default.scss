@@ -104,6 +104,13 @@ p {
   text-weight: bold;
   text-align: center;
 }
+.wrongPage {
+  color: $blueDark;
+
+}
+.wrongPage:hover {
+  color: $blue;
+}
 
 //Welcome----------------------------------------------
 .footer {
