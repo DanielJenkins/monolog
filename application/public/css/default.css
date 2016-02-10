@@ -4,10 +4,6 @@
 body {
   background-color: #E5E9E5; }
 
-.btn-default:active,
-.btn-default:focus {
-  outline: 0; }
-
 h1, h2, h3, h4, h5, h6, a {
   font-family: "Noto Sans", Helvetica, sans-serif; }
 
@@ -54,6 +50,10 @@ p {
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
   background-color: #04808B;
   text-shadow: 0px 0px 4px #000300; }
+
+.error {
+  color: #E50A04;
+  text-align: center; }
 
 .fillerImg {
   width: 100%;

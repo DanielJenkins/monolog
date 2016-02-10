@@ -8,8 +8,14 @@ app.config(['$routeProvider', function($routeProvider) {
     .when("/loginpage", {
       templateUrl: "../html/login.html"
     })
+    .when("/loginErr", {
+      templateUrl: "../html/loginErr.html"
+    })
     .when("/joinpage", {
       templateUrl: "../html/join.html"
+    })
+    .when("/joinErr", {
+      templateUrl: "../html/joinErr.html"
     })
     .when("/home", {
       templateUrl: "../html/home.html",

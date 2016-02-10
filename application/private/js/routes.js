@@ -14,13 +14,13 @@ module.exports = function(app, passport) {
 
   app.post('/newuser', passport.authenticate('local-signup', {
     successRedirect: '/success',
-    failureRedirect: '/#/joinpage',
+    failureRedirect: '/#/joinErr',
     failureFlash: true
   }));
 
   app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/success',
-    failureRedirect: '/#/loginpage',
+    failureRedirect: '/#/loginErr',
     failureFlash: true
   }));
 
