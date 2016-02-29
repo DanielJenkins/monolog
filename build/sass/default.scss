@@ -113,20 +113,6 @@ p {
 }
 
 //Welcome----------------------------------------------
-.footer {
-  position: fixed;
-  bottom:0;
-  padding: 15px;
-  background-color: $navBackground;
-  color: $blue;
-  z-index: -1;
-}
-.footerText {
-  font-size: 88px;
-  font-weight: bold;
-  text-align: center;
-  text-shadow: 2px 2px 2px $blueBlack;
-}
 .header {
   height: 350px;
   position: relative;
